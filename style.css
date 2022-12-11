@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+:root {
+    --white: #fefefe;
+
+    /*initial bag color, masa mula2 loading*/
+    --bag-color: #acffac;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    color: #000;
+    max-height: 100vh;
+    font-family: 'Nunito', sans-serif;
+    background-color: #dfdbe5;
+    background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.4'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+button {
+    border: none;
+}
+
+button:focus {
+    outline: none;
+}
+
+.configurator__container {
+    width: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--white);
+    border-radius: .5rem;
+}
+
+.backpack__container {
+    text-align: center;
+}
+
+.backpack {
+    width: 250px;
+    height: auto;
+    color: var(--bag-color);
+    transition: color .2s;
+}
+
+.content {
+    margin: 1.5rem;
+}
+
+.title,
+.subtitle {
+    text-align: center;
+}
+
+.title {
+    font-size: 1.5rem;
+    margin-bottom: .5rem;
+}
+
+.subtitle {
+    font-size: 1.15rem;
+}
+
+.color__container {
+    display: flex;
+    column-gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+.color__button {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: var(--bag-color);
+    transition: box-shadow 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+    cursor: pointer;
+}
+
+.color__button:is(:focus-visible, :hover) {
+    box-shadow: 0 0 0 3px var(--white),
+                0 0 0 6px var(--bag-color);
+}
+
+/*^^^^^^^^^^^^^^^^^^^^^^ COLOR PALETTE ^^^^^^^^^^^^^^^^^^^^^^*/
+[data-color="#ee2c2c"] {
+    --bag-color: #ee2c2c;
+}
+
+[data-color="#6495ed"] {
+    --bag-color: #6495ed;
+}
+
+[data-color="#ff69b4"] {
+    --bag-color: #ff69b4;
+}
+
+[data-color="#a9a9a9"] {
+    --bag-color: #a9a9a9;
+}
+
+[data-color="#acffac"] {
+    --bag-color: #acffac;
+}
+
+/*^^^^^^^^^^^^^^^^^^^^^^ BREAKPOINTS ^^^^^^^^^^^^^^^^^^^^^^*/
+@media screen and (min-width: 768px) {
+    .color__button:is(:focus-visible, :hover) {
+        box-shadow: 0 0 0 4px var(--white),
+                    0 0 0 8px var(--bag-color);
+    }
+
+    .configurator__container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .backpack {
+        width: 350px;
+    }
+
+    .title,
+    .subtitle {
+        text-align: initial;
+    }
+
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .subtitle {
+        font-size: 1.3rem;
+    }
+
+    .color__container {
+        justify-content: initial;
+        column-gap: 2rem;
+    }
+
+    .color__button {
+        width: 40px;
+        height: 40px;
+    }
+}
